@@ -1,0 +1,65 @@
+﻿<Window x:Class="Paint.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Paint"
+        mc:Ignorable="d"
+        Title="Paint"
+        Width="1280"
+        Height="720"
+        Loaded="Window_Loaded"
+        KeyDown="Window_KeyDown"
+        KeyUp="Window_KeyUp">
+    
+    <Grid Name="grMain">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Grid x:Name="grShapeButtons" Height="auto">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="Auto"/>
+            </Grid.ColumnDefinitions>
+
+            <RadioButton x:Name="rectangle"
+                         Grid.Column="0"
+                         Content="Rectangle"
+                         Margin="20"
+                         IsChecked="True"/>
+            <RadioButton x:Name="ellipce"
+                         Grid.Column="1" 
+                         Content="Ellipce"
+                         Margin="20"/>
+            <RadioButton x:Name="triangleR"
+                         Grid.Column="2" 
+                         Content="Right Triangle"
+                         Margin="20"/>
+            <RadioButton x:Name="triangleI"
+                         Grid.Column="3" 
+                         Content="Isosceles Triangle"
+                         Margin="20"/>
+            <RadioButton x:Name="randomShape"
+                         Grid.Column="4" 
+                         Content="Random"
+                         Margin="20"/>
+        </Grid>
+        
+        <Canvas x:Name="canvas"
+                Grid.Row="1"
+                Background="#FF13FFAF"
+                MouseLeftButtonDown="canvas_MouseLeftButtonDown"
+                MouseRightButtonDown="canvas_MouseRightButtonDown"
+                MouseMove="canvas_MouseMove"
+                MouseLeftButtonUp="canvas_MouseButtonUp"
+                MouseRightButtonUp="canvas_MouseButtonUp"
+                MouseWheel="canvas_MouseWheel"
+                ClipToBounds="True">
+
+        </Canvas>
+    </Grid>
+</Window>
