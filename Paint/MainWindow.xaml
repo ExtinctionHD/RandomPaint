@@ -31,9 +31,9 @@
                          Content="Rectangle"
                          Margin="20"
                          IsChecked="True"/>
-            <RadioButton x:Name="ellipce"
+            <RadioButton x:Name="ellipse"
                          Grid.Column="1" 
-                         Content="Ellipce"
+                         Content="Ellipse"
                          Margin="20"/>
             <RadioButton x:Name="triangleR"
                          Grid.Column="2" 

@@ -25,16 +25,7 @@ namespace Paint.classes
             }
             set
             {
-                base.Width = value;
-                if (value <= Height)
-                {
-                    base.Width = value;
-                    base.Height = value;
-                }
-                else
-                {
-                    base.Height = Width;
-                }
+                drawBase.Width = value;
             }
         }
         public override double Height
@@ -45,16 +36,20 @@ namespace Paint.classes
             }
             set
             {
-                base.Height = value;
-                if (value <= Width)
-                {
-                    base.Height = value;
-                    base.Width = value;
-                }
-                else
-                {
-                    base.Height = Width;
-                }
+                drawBase.Height = value;
+                SetEqualSides(value);
+            }
+        }
+
+        public void SetEqualSides(double height)
+        {
+            if (height <= Width)
+            {
+                base.Width = height;
+            }
+            else
+            {
+                base.Height = Width;
             }
         }
         

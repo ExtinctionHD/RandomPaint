@@ -15,7 +15,7 @@ using System.Windows.Shapes;
 
 namespace Paint.classes
 {
-    class Circle : Ellipse
+    class Circle : Ellipse, IEquilateral
     {
         public override double Width
         {
@@ -25,16 +25,7 @@ namespace Paint.classes
             }
             set
             {
-                base.Width = value;
-                if (value <= Height)
-                {
-                    base.Width = value;
-                    base.Height = value;
-                }
-                else
-                {
-                    base.Height = Width;
-                }
+                drawBase.Width = value;
             }
         }
         public override double Height
@@ -46,18 +37,22 @@ namespace Paint.classes
             set
             {
                 drawBase.Height = value;
-                if (value <= Width)
-                {
-                    base.Height = value;
-                    base.Width = value;
-                }
-                else
-                {
-                    base.Height = Width;
-                }
+                SetEqualSides(value);
             }
         }
         
+        public void SetEqualSides(double height)
+        {
+            if (height <= Width)
+            {
+                base.Width = height;
+            }
+            else
+            {
+                base.Height = Width;
+            }
+        }
+
         public Circle(Color color, Point vertex1, Point vertex2) : base(color, vertex1, vertex2)
         {
         }

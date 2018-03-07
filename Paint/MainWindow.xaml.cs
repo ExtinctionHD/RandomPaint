@@ -21,7 +21,7 @@ namespace Paint
     public partial class MainWindow : Window
     {
         private Random random = new Random();
-        private Point RBDown;
+        private Point RightButtonDownPos;
 
         private Color curColor;
         private Shape curShape;
@@ -94,7 +94,7 @@ namespace Paint
                     curShape = new Rectangle(curColor, tmp.Vertex1, Mouse.GetPosition(canvas));
                     curShape.Draw(canvas, shapesHistory);
                 }
-                if ((bool)ellipce.IsChecked)
+                if ((bool)ellipse.IsChecked)
                 {
                     Shape tmp = curShape;
 
@@ -125,7 +125,7 @@ namespace Paint
         {
             Cursor = Cursors.SizeAll;
 
-            RBDown = e.GetPosition(canvas);
+            RightButtonDownPos = e.GetPosition(canvas);
         }
 
         private void canvas_MouseMove(object sender, MouseEventArgs e)
@@ -137,9 +137,9 @@ namespace Paint
 
             if (e.RightButton == MouseButtonState.Pressed && curShape != null)
             {
-                Point delta = new Point(e.GetPosition(canvas).X - RBDown.X, e.GetPosition(canvas).Y - RBDown.Y);
+                Point delta = new Point(e.GetPosition(canvas).X - RightButtonDownPos.X, e.GetPosition(canvas).Y - RightButtonDownPos.Y);
                 curShape.Move(canvas, delta);
-                RBDown = e.GetPosition(canvas);
+                RightButtonDownPos = e.GetPosition(canvas);
             }
         }
 
