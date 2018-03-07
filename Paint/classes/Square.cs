@@ -15,7 +15,7 @@ using System.Windows.Shapes;
 
 namespace Paint.classes
 {
-    class Square : Rectangle // interfaces
+    class Square : Rectangle, IEquilateral
     {
         public override double Width
         {
