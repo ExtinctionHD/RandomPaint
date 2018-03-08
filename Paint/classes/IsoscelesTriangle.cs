@@ -16,13 +16,13 @@ using System.Windows.Shapes;
 
 namespace Paint.classes
 {
-    class IsoscelesTriangle : Triangle
+    class IsoscelesTriangle : Polygon
     {
         public IsoscelesTriangle(Color color, Point vertex1, Point vertex2) : base(color, vertex1, vertex2)
         {
         }
 
-        protected override Point[] GenerateTriangle()
+        protected override Point[] GeneratePolygon()
         {
             Point[] triangle = new Point[3]
             {

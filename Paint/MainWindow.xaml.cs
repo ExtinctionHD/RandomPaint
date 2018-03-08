@@ -169,6 +169,10 @@ namespace Paint
         {
             curCreator = new IsoscelesTriangleCreator();
         }
+        private void star_Checked(object sender, RoutedEventArgs e)
+        {
+            curCreator = new StarCreator();
+        }
         private void randomShape_Checked(object sender, RoutedEventArgs e)
         {
             curCreator = new RandomCreator();

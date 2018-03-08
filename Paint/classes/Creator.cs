@@ -68,6 +68,14 @@ namespace Paint.classes
         }
     }
 
+    class StarCreator : Creator
+    {
+        public override Shape FactoryMethod(Color color, Point v1, Point v2)
+        {
+            return new Star(color, v1, v2);
+        }
+    }
+
     class RandomCreator : Creator
     {
         public override Shape FactoryMethod(Color color, Point v1, Point v2)
@@ -94,8 +102,11 @@ namespace Paint.classes
                 case 4:
                     return new IsoscelesTriangle(color, v1, v2);
 
-                default:
+                case 5:
                     return new RightTriangle(color, v1, v2);
+
+                default:
+                    return new Star(color, v1, v2);
             }
         }
     }

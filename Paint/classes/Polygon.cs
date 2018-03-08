@@ -16,7 +16,7 @@ using System.Windows.Shapes;
 
 namespace Paint.classes
 {
-    abstract class Triangle : Shape
+    abstract class Polygon : Shape
     {
         public override double Width
         {
@@ -33,23 +33,23 @@ namespace Paint.classes
             }
         }
 
-        public Triangle(Color color, Point vertex1, Point vertex2) : base(color, vertex1, vertex2)
+        public Polygon(Color color, Point vertex1, Point vertex2) : base(color, vertex1, vertex2)
         {
         }
 
         protected override System.Windows.Shapes.Shape GenerateDrawBase()
         {
-            return new Polygon();
+            return new System.Windows.Shapes.Polygon();
         }
 
         protected override void SetSides()
         {
             if (vertex2.X - vertex1.X >= 0 && vertex2.Y - vertex1.Y >= 0)
             {
-                ((Polygon)drawBase).Points = new PointCollection(GenerateTriangle());
+                ((System.Windows.Shapes.Polygon)drawBase).Points = new PointCollection(GeneratePolygon());
             }
         }
 
-        protected abstract Point[] GenerateTriangle();
+        protected abstract Point[] GeneratePolygon();
     }
 }

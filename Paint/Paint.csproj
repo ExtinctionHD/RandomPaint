@@ -70,8 +70,9 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="classes\Triangle.cs" />
+    <Compile Include="classes\Polygon.cs" />
     <Compile Include="classes\Square.cs" />
+    <Compile Include="classes\Star.cs" />
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>

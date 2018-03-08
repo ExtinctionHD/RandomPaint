@@ -24,6 +24,7 @@
                 <ColumnDefinition Width="Auto"/>
                 <ColumnDefinition Width="Auto"/>
                 <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="Auto"/>
             </Grid.ColumnDefinitions>
 
             <RadioButton x:Name="rectangle"
@@ -47,8 +48,13 @@
                          Content="Isosceles Triangle"
                          Margin="20" 
                          Checked="triangleI_Checked"/>
-            <RadioButton x:Name="randomShape"
+            <RadioButton x:Name="star"
                          Grid.Column="4" 
+                         Content="Star"
+                         Margin="20" 
+                         Checked="star_Checked"/>
+            <RadioButton x:Name="randomShape"
+                         Grid.Column="5" 
                          Content="Random"
                          Margin="20" 
                          Checked="randomShape_Checked"/>
