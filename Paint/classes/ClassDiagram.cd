@@ -1,0 +1,63 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="Paint.classes.Shape">
+    <Position X="8.75" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAEAADIBIAEwgAAAAAAAEAAAAIAAICAAEAAgABAABA=</HashCode>
+      <FileName>classes\Shape.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Paint.classes.Rectangle">
+    <Position X="4" Y="3" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAEAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>classes\Rectangle.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Paint.classes.Ellipse">
+    <Position X="2.75" Y="5.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>classes\Ellipse.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Paint.classes.Square">
+    <Position X="5.25" Y="5.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAABAAAAAAAAAAACEAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>classes\Square.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Paint.classes.Circle">
+    <Position X="2.75" Y="7.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAABAAAAAAAAAAACEAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>classes\Circle.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Paint.classes.Triangle">
+    <Position X="12.75" Y="3" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>gAAAAAAABAAEAAAAAAAAAEAAAAIAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>classes\Triangle.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Paint.classes.IsoscelesTriangle">
+    <Position X="11.25" Y="6" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>gAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>classes\IsoscelesTriangle.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Paint.classes.RightTriangle">
+    <Position X="13.75" Y="6" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>gAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>classes\RightTriangle.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
