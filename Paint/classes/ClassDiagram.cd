@@ -58,11 +58,12 @@
       <FileName>classes\RightTriangle.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="Paint.classes.Star">
+  <Class Name="Paint.classes.Pentagon">
     <Position X="13.75" Y="10.5" Width="2.25" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAA=</HashCode>
-      <FileName>classes\Star.cs</FileName>
+      <FileName>classes\Pentagon.cs</FileName>
+      <NewMemberFileName>classes\Star.cs</NewMemberFileName>
     </TypeIdentifier>
   </Class>
   <Font Name="Segoe UI" Size="9" />

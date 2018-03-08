@@ -59,6 +59,7 @@
     <Compile Include="classes\Creator.cs" />
     <Compile Include="classes\IEquilateral.cs" />
     <Compile Include="classes\IsoscelesTriangle.cs" />
+    <Compile Include="classes\Pentagon.cs" />
     <Compile Include="classes\Rectangle.cs" />
     <Compile Include="classes\RightTriangle.cs" />
     <Compile Include="classes\Shape.cs" />
