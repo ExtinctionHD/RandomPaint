@@ -30,23 +30,28 @@
                          Grid.Column="0"
                          Content="Rectangle"
                          Margin="20"
-                         IsChecked="True"/>
+                         IsChecked="True"
+                         Checked="rectangle_Checked"/>
             <RadioButton x:Name="ellipse"
                          Grid.Column="1" 
                          Content="Ellipse"
-                         Margin="20"/>
+                         Margin="20" 
+                         Checked="ellipse_Checked"/>
             <RadioButton x:Name="triangleR"
                          Grid.Column="2" 
                          Content="Right Triangle"
-                         Margin="20"/>
+                         Margin="20" 
+                         Checked="triangleR_Checked"/>
             <RadioButton x:Name="triangleI"
                          Grid.Column="3" 
                          Content="Isosceles Triangle"
-                         Margin="20"/>
+                         Margin="20" 
+                         Checked="triangleI_Checked"/>
             <RadioButton x:Name="randomShape"
                          Grid.Column="4" 
                          Content="Random"
-                         Margin="20"/>
+                         Margin="20" 
+                         Checked="randomShape_Checked"/>
         </Grid>
         
         <Canvas x:Name="canvas"

@@ -11,6 +11,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
+using System.Reflection;
 using Paint.classes;
 
 namespace Paint
@@ -23,15 +24,9 @@ namespace Paint
         private Random random = new Random();
         private Point RightButtonDownPos;
 
+        private Creator curCreator;
         private Color curColor;
         private Shape curShape;
-        private List<Shape> allShapes = new List<Shape>()
-        {
-            new Rectangle(Colors.Black, new Point(), new Point()),
-            new Ellipse(Colors.Black, new Point(), new Point()),
-            new RightTriangle(Colors.Black, new Point(), new Point()),
-            new IsoscelesTriangle(Colors.Black, new Point(), new Point())
-        };
         private List<Shape> shapesHistory = new List<Shape>();
 
         public MainWindow()
@@ -111,12 +106,8 @@ namespace Paint
             Cursor = Cursors.Pen;
 
             curColor = GetRandomColor();
-            curShape = ChoiceShape();
-
-            Point startPoint = e.GetPosition(canvas);
-            curShape.Vertex1 = startPoint;
-            curShape.Vertex2 = startPoint;
-            curShape.Color = curColor;
+            Point curPos = e.GetPosition(canvas);
+            curShape = curCreator.FactoryMethod(curColor, curPos, curPos);
 
             curShape.Draw(canvas, shapesHistory);
         }
@@ -161,22 +152,26 @@ namespace Paint
             return Color.FromRgb(rgb[0], rgb[1], rgb[2]);
         }
 
-        private Shape ChoiceShape()
+        // Выбор фигуры
+        private void rectangle_Checked(object sender, RoutedEventArgs e)
         {
-            int index = 0;
-            foreach (RadioButton btn in grShapeButtons.Children)
-            {
-                if ((bool)btn.IsChecked)
-                {
-                    index = grShapeButtons.Children.IndexOf(btn);
-                    if (index == grShapeButtons.Children.Count - 1)
-                    {
-                        index = random.Next(allShapes.Count);
-                    }
-                }
-            }
-
-            return (Shape)allShapes[index].Clone();
+            curCreator = new RectangleCreator();
+        }
+        private void ellipse_Checked(object sender, RoutedEventArgs e)
+        {
+            curCreator = new EllipseCreator();
+        }
+        private void triangleR_Checked(object sender, RoutedEventArgs e)
+        {
+            curCreator = new RightTriangleCreator();
+        }
+        private void triangleI_Checked(object sender, RoutedEventArgs e)
+        {
+            curCreator = new IsoscelesTriangleCreator();
+        }
+        private void randomShape_Checked(object sender, RoutedEventArgs e)
+        {
+            curCreator = new RandomCreator();
         }
     }
 }
