@@ -16,7 +16,7 @@ using System.Windows.Shapes;
 
 namespace Paint.classes 
 {
-    abstract class Shape : ICloneable
+    abstract class Shape
     {
         public System.Windows.Shapes.Shape drawBase;
 
@@ -142,42 +142,5 @@ namespace Paint.classes
         {
             drawBase.RenderTransform = new RotateTransform(angle, Width / 2, Height / 2);
         }
-
-        public object Clone()
-        {
-            drawBase = GenerateDrawBase();
-            return MemberwiseClone();
-        }
-
-        // Не используется пока
-        //private void CalcVertecies(Point v1, Point v2)
-        //{
-        //    if (v1.X > v2.X)
-        //    {
-        //        if (v1.Y > v2.Y)
-        //        {
-        //            topLeft = v2;
-        //            bottomRight = v1;
-        //        }
-        //        else
-        //        {
-        //            topLeft.X = v2.X;
-        //            bottomRight.X = v1.X;
-        //        }
-        //    }
-        //    else
-        //    {
-        //        if (v1.Y > v2.Y)
-        //        {
-        //            topLeft.Y = v2.Y;
-        //            bottomRight.Y = v1.Y;
-        //        }
-        //        else
-        //        {
-        //            topLeft = v1;
-        //            bottomRight = v2;
-        //        }
-        //    }
-        //}
     }
 }
