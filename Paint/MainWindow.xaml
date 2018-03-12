@@ -17,7 +17,10 @@
             <RowDefinition Height="Auto"/>
             <RowDefinition/>
         </Grid.RowDefinitions>
-        <Grid x:Name="grShapeButtons" Height="auto">
+        
+        <Grid x:Name="grShapeButtons" 
+              Height="auto"
+              HorizontalAlignment="Left">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="Auto"/>
                 <ColumnDefinition Width="Auto"/>
@@ -65,7 +68,13 @@
                          Margin="20" 
                          Checked="randomShape_Checked"/>
         </Grid>
-        
+
+        <Button Content="New Colors"
+                HorizontalAlignment="Right"
+                VerticalAlignment="Center"
+                Margin="20, 0"
+                Padding="10, 3"/>
+
         <Canvas x:Name="canvas"
                 Grid.Row="1"
                 Background="#FF13FFAF"

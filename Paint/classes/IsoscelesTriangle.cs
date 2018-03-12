@@ -26,9 +26,9 @@ namespace Paint.classes
         {
             Point[] triangle = new Point[3]
             {
-                new Point((vertex2.X - vertex1.X) / 2, 0),
-                new Point(vertex2.X - vertex1.X, vertex2.Y - vertex1.Y),
-                new Point(0, vertex2.Y - vertex1.Y)
+                new Point((Vertex2.X - Vertex1.X) / 2, 0),
+                new Point(Vertex2.X - Vertex1.X, Vertex2.Y - Vertex1.Y),
+                new Point(0, Vertex2.Y - Vertex1.Y)
             };
             return triangle;
         }

@@ -46,20 +46,16 @@ namespace Paint
             {
                 if (curShape.GetType() == typeof(Rectangle))
                 {
-                    Shape tmp = curShape;
-
                     canvas.Children.Remove(curShape.drawBase);
 
-                    curShape = new Square(curColor, tmp.Vertex1, tmp.Vertex2);
+                    curShape = new Square(curShape);
                     curShape.Draw(canvas, shapesHistory);
                 }
                 if (curShape.GetType() == typeof(Ellipse))
                 {
-                    Shape tmp = curShape;
-
                     canvas.Children.Remove(curShape.drawBase);
 
-                    curShape = new Circle(curColor, tmp.Vertex1, tmp.Vertex2);
+                    curShape = new Circle(curShape);
                     curShape.Draw(canvas, shapesHistory);
                 }
             }
@@ -69,6 +65,7 @@ namespace Paint
             {
                 canvas.Children.Remove(canvas.Children[canvas.Children.Count - 1]);
                 shapesHistory.Remove(shapesHistory.Last());
+
                 if (shapesHistory.Count != 0)
                     curShape = shapesHistory.Last();
                 else
@@ -82,20 +79,16 @@ namespace Paint
             {
                 if ((bool)rectangle.IsChecked)
                 {
-                    Shape tmp = curShape;
-
                     canvas.Children.Remove(curShape.drawBase);
 
-                    curShape = new Rectangle(curColor, tmp.Vertex1, Mouse.GetPosition(canvas));
+                    curShape = new Rectangle(curShape);
                     curShape.Draw(canvas, shapesHistory);
                 }
                 if ((bool)ellipse.IsChecked)
                 {
-                    Shape tmp = curShape;
-
                     canvas.Children.Remove(curShape.drawBase);
 
-                    curShape = new Ellipse(curColor, tmp.Vertex1, Mouse.GetPosition(canvas));
+                    curShape = new Ellipse(curShape);
                     curShape.Draw(canvas, shapesHistory);
                 }
             }

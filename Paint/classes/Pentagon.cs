@@ -23,8 +23,8 @@ namespace Paint.classes
 
         protected override Point[] GeneratePolygon()
         {
-            double width = vertex2.X - vertex1.X;
-            double height = vertex2.Y - vertex1.Y;
+            double width = Vertex2.X - Vertex1.X;
+            double height = Vertex2.Y - Vertex1.Y;
 
             Point[] pentagon = new Point[]
             {

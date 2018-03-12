@@ -17,43 +17,124 @@ namespace Paint.classes
 {
     class Square : Rectangle, IEquilateral
     {
-        public override double Width
+        public override Point Vertex2
         {
             get
             {
-                return drawBase.Width;
+                return base.Vertex2;
             }
             set
             {
-                drawBase.Width = value;
-            }
-        }
-        public override double Height
-        {
-            get
-            {
-                return drawBase.Height;
-            }
-            set
-            {
-                drawBase.Height = value;
-                SetEqualSides(value);
+                base.Vertex2 = SetEqualSides(value);
+                SetSides();
             }
         }
 
-        public void SetEqualSides(double height)
+        public Point SetEqualSides(Point v2)
         {
-            if (height <= Width)
+            double height, width;
+
+            if (!reverseX)
             {
-                base.Width = height;
+                width = v2.X - Vertex1.X;
+
+                if (width <= 0)
+                {
+                    return v2;
+                }
+
+                if (!reverseY)
+                {
+                    height = v2.Y - Vertex1.Y;
+
+                    if (height <= 0)
+                    {
+                        return v2;
+                    }
+
+                    if (height < width)
+                    {
+                        v2.X = Vertex1.X + height;
+                    }
+                    else
+                    {
+                        v2.Y = Vertex1.Y + width;
+                    }
+                }
+                else
+                {
+                    height = Vertex2.Y - v2.Y;
+                    
+                    if (height <= 0)
+                    {
+                        return v2;
+                    }
+
+                    if (height < width)
+                    {
+                        v2.X = Vertex1.X + height;
+                    }
+                    else
+                    {
+                        v2.Y = Vertex2.Y - width;
+                    }
+                }
             }
             else
             {
-                base.Height = Width;
+                width = Vertex2.X - v2.X;
+
+                if (width <= 0)
+                {
+                    return v2;
+                }
+
+                if (!reverseY)
+                {
+                    height = v2.Y - Vertex1.Y;
+                    
+                    if (height <= 0)
+                    {
+                        return v2;
+                    }
+
+                    if (height < width)
+                    {
+                        v2.X = Vertex2.X - height;
+                    }
+                    else
+                    {
+                        v2.Y = Vertex1.Y + width;
+                    }
+                }
+                else
+                {
+                    height = Vertex2.Y - v2.Y;
+
+                    if (height <= 0)
+                    {
+                        return v2;
+                    }
+
+                    if (height < width)
+                    {
+                        v2.X = Vertex2.X - height;
+                    }
+                    else
+                    {
+                        v2.Y = Vertex2.Y - width;
+                    }
+                }
             }
+
+            return v2;
         }
         
         public Square(Color color, Point topLeft, Point bottomRight) : base(color, topLeft, bottomRight)
+        {
+        }
+        
+        public Square(Shape shape) : base(shape)
         {
         }
     }

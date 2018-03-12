@@ -16,7 +16,6 @@ D:\Education\БГУИР ООТПиСП\Paint\Paint\obj\Debug\Paint.pdb
 D:\Education\БГУИР ООТПиСП\Git\RandomPaint\Paint\bin\Debug\Paint.exe.config
 D:\Education\БГУИР ООТПиСП\Git\RandomPaint\Paint\bin\Debug\Paint.exe
 D:\Education\БГУИР ООТПиСП\Git\RandomPaint\Paint\bin\Debug\Paint.pdb
-D:\Education\БГУИР ООТПиСП\Git\RandomPaint\Paint\obj\Debug\Paint.csprojResolveAssemblyReference.cache
 D:\Education\БГУИР ООТПиСП\Git\RandomPaint\Paint\obj\Debug\MainWindow.g.cs
 D:\Education\БГУИР ООТПиСП\Git\RandomPaint\Paint\obj\Debug\App.g.cs
 D:\Education\БГУИР ООТПиСП\Git\RandomPaint\Paint\obj\Debug\Paint_MarkupCompile.cache
@@ -28,3 +27,4 @@ D:\Education\БГУИР ООТПиСП\Git\RandomPaint\Paint\obj\Debug\Paint.csp
 D:\Education\БГУИР ООТПиСП\Git\RandomPaint\Paint\obj\Debug\Paint.csproj.CoreCompileInputs.cache
 D:\Education\БГУИР ООТПиСП\Git\RandomPaint\Paint\obj\Debug\Paint.exe
 D:\Education\БГУИР ООТПиСП\Git\RandomPaint\Paint\obj\Debug\Paint.pdb
+D:\Education\БГУИР ООТПиСП\Git\RandomPaint\Paint\obj\Debug\Paint.csprojResolveAssemblyReference.cache

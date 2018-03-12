@@ -21,6 +21,12 @@ namespace Paint.classes
         {
         }
 
+        public Rectangle(Shape shape) : base(shape.Color, shape.Vertex1, shape.Vertex2)
+        {
+            reverseX = shape.reverseX;
+            reverseY = shape.reverseY;
+        }
+
         protected override System.Windows.Shapes.Shape GenerateDrawBase()
         {
             return new System.Windows.Shapes.Rectangle();
@@ -28,11 +34,8 @@ namespace Paint.classes
 
         protected override void SetSides()
         {
-            if (vertex2.X - vertex1.X >= 0)
-                Width = vertex2.X - vertex1.X;
-
-            if (vertex2.Y - vertex1.Y >= 0)
-                Height = vertex2.Y - vertex1.Y;
+            Width = Vertex2.X - Vertex1.X;
+            Height = Vertex2.Y - Vertex1.Y;
         }
     }
 }

@@ -45,9 +45,9 @@ namespace Paint.classes
                 vertex1 = value;
             }
         }
-        protected Point vertex1;
+        private Point vertex1;
 
-        public Point Vertex2
+        public virtual Point Vertex2
         {
             get
             {
@@ -55,11 +55,19 @@ namespace Paint.classes
             }
             set
             {
-                vertex2 = value;
-                SetSides();
+                if (value != vertex2)
+                {
+                    SetVerteciesX(value);
+                    SetVerteciesY(value);
+
+                    SetPosition();
+                    SetSides();
+                }
             }
         }
-        protected Point vertex2;
+        private Point vertex2;
+
+        public bool reverseX, reverseY;
 
         public virtual double Width
         {
@@ -100,20 +108,23 @@ namespace Paint.classes
 
         public Shape(Color color, Point vertex1, Point vertex2)
         {
-            this.color = color;
-            this.vertex1 = vertex1;
-            this.vertex2 = vertex2;
-            angle = 0;
-
             drawBase = GenerateDrawBase();
+
+            this.color = color;
+            this.Vertex1 = vertex1;
+            this.vertex2 = vertex2;
+
+            SetPosition();
             SetSides();
             SetFill();
+
+            angle = 0;
         }
 
         public void Draw(Canvas canvas, List<Shape> history)
         {
-            Canvas.SetLeft(drawBase, Vertex1.X);
-            Canvas.SetTop(drawBase, Vertex1.Y);
+            //PositionCheck(Vertex1, Vertex2, drawBase);  // Рисование во все стороны
+
             canvas.Children.Add(drawBase);
             history.Add(this);
         }
@@ -123,13 +134,62 @@ namespace Paint.classes
             Point topLeft = new Point(Vertex1.X + delta.X, Vertex1.Y + delta.Y);
 
             Vertex1 = topLeft;
-            Vertex2 = new Point(Vertex1.X + Width, Vertex1.Y + Height);
+            vertex2 = new Point(Vertex1.X + Width, Vertex1.Y + Height);
 
-            Canvas.SetLeft(drawBase, topLeft.X);
-            Canvas.SetTop(drawBase, topLeft.Y);
+            SetPosition();
         }
 
         protected abstract System.Windows.Shapes.Shape GenerateDrawBase();
+        
+        protected void SetVerteciesX(Point v2)
+        {
+            double v1X = Vertex1.X;
+            if (reverseX)
+            {
+                v1X += Width;
+            }
+
+            if (v1X > v2.X)
+            {
+                vertex1.X = v2.X;
+
+                vertex2.X = v1X;
+                reverseX = true;
+            }
+            else
+            {
+                vertex2.X = v2.X;
+                reverseX = false;
+            }
+        }
+
+        protected void SetVerteciesY(Point v2)
+        {
+            double v1Y = Vertex1.Y;
+            if (reverseY)
+            {
+                v1Y += Height;
+            }
+
+            if (v1Y > v2.Y)
+            {
+                vertex1.Y = v2.Y;
+
+                vertex2.Y = v1Y;
+                reverseY = true;
+            }
+            else
+            {
+                vertex2.Y = v2.Y;
+                reverseY = false;
+            }
+        }
+
+        private void SetPosition()
+        {
+            Canvas.SetLeft(drawBase, Vertex1.X);
+            Canvas.SetTop(drawBase, Vertex1.Y);
+        }
 
         protected abstract void SetSides();
 
@@ -142,5 +202,6 @@ namespace Paint.classes
         {
             drawBase.RenderTransform = new RotateTransform(angle, Width / 2, Height / 2);
         }
+        
     }
 }

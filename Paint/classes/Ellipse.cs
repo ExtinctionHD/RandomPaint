@@ -21,6 +21,10 @@ namespace Paint.classes
         {
         }
 
+        public Ellipse(Shape shape) : base(shape)
+        {
+        }
+
         protected override void SetSides()
         {
             base.SetSides();

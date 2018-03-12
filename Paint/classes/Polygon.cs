@@ -37,6 +37,12 @@ namespace Paint.classes
         {
         }
 
+        public Polygon(Shape shape) : base(shape.Color, shape.Vertex1, shape.Vertex2)
+        {
+            reverseX = shape.reverseX;
+            reverseY = shape.reverseY;
+        }
+
         protected override System.Windows.Shapes.Shape GenerateDrawBase()
         {
             return new System.Windows.Shapes.Polygon();
@@ -44,7 +50,7 @@ namespace Paint.classes
 
         protected override void SetSides()
         {
-            if (vertex2.X - vertex1.X >= 0 && vertex2.Y - vertex1.Y >= 0)
+            if (Vertex2.X - Vertex1.X >= 0 && Vertex2.Y - Vertex1.Y >= 0)
             {
                 ((System.Windows.Shapes.Polygon)drawBase).Points = new PointCollection(GeneratePolygon());
             }
