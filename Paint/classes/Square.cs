@@ -28,6 +28,14 @@ namespace Paint.classes
                 base.Vertex2 = SetEqualSides(value);
             }
         }
+        
+        public Square(Color color, Point topLeft, Point bottomRight): base(color, topLeft, bottomRight)
+        {
+        }
+        
+        public Square(Shape shape): base(shape)
+        {
+        }
 
         public Point SetEqualSides(Point v2)
         {
@@ -63,7 +71,7 @@ namespace Paint.classes
                 else
                 {
                     height = Vertex2.Y - v2.Y;
-                    
+
                     if (height <= 0)
                     {
                         return v2;
@@ -91,7 +99,7 @@ namespace Paint.classes
                 if (!reverseY)
                 {
                     height = v2.Y - Vertex1.Y;
-                    
+
                     if (height <= 0)
                     {
                         return v2;
@@ -127,14 +135,6 @@ namespace Paint.classes
             }
 
             return v2;
-        }
-        
-        public Square(Color color, Point topLeft, Point bottomRight): base(color, topLeft, bottomRight)
-        {
-        }
-        
-        public Square(Shape shape): base(shape)
-        {
         }
     }
 }

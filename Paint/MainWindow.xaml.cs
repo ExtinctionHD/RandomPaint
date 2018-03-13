@@ -41,7 +41,6 @@ namespace Paint
             canvas.Background = new SolidColorBrush(GetRandomColor());
             Background = new SolidColorBrush(GetRandomColor());
         }
-
         private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
         {
             //SaveDilog();

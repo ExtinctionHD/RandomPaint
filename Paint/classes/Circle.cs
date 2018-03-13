@@ -29,6 +29,14 @@ namespace Paint.classes
             }
         }
 
+        public Circle(Color color, Point vertex1, Point vertex2): base(color, vertex1, vertex2)
+        {
+        }
+
+        public Circle(Shape shape): base(shape)
+        {
+        }
+
         public Point SetEqualSides(Point v2)
         {
             double height, width;
@@ -127,14 +135,6 @@ namespace Paint.classes
             }
 
             return v2;
-        }
-
-        public Circle(Color color, Point vertex1, Point vertex2): base(color, vertex1, vertex2)
-        {
-        }
-
-        public Circle(Shape shape): base(shape)
-        {
         }
     }
 }
