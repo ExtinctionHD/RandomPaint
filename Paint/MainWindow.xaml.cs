@@ -12,6 +12,8 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Reflection;
+using System.IO;
+using Microsoft.Win32;
 using Paint.classes;
 
 namespace Paint
@@ -38,6 +40,12 @@ namespace Paint
         {
             canvas.Background = new SolidColorBrush(GetRandomColor());
         }
+
+        private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            SaveDilog();
+        }
+
 
         private void Window_KeyDown(object sender, KeyEventArgs e)
         {
@@ -186,5 +194,44 @@ namespace Paint
             curCreator = new RandomCreator();
         }
 
+        private void btnSave_Click(object sender, RoutedEventArgs e)
+        {
+            SaveDilog();
+        }
+
+        private void SaveDilog()
+        {
+            SaveFileDialog dlg = new SaveFileDialog
+            {
+                FileName = "Picture.png",
+                DefaultExt = ".png",
+                Filter = "Images|*.png"
+            };
+
+            bool? result = dlg.ShowDialog();
+
+            if (result == true)
+            {
+                SavePicture(dlg.FileName);
+            }
+        }
+
+        private void SavePicture(string fileName)
+        {
+            BitmapSource img = ToBitmapSource(canvas);
+            using (var fileStream = new FileStream(fileName, FileMode.Create))
+            {
+                BitmapEncoder encoder = new PngBitmapEncoder();
+                encoder.Frames.Add(BitmapFrame.Create(img));
+                encoder.Save(fileStream);
+            }
+        }
+
+        private BitmapSource ToBitmapSource(FrameworkElement obj)
+        {
+            RenderTargetBitmap bmp = new RenderTargetBitmap((int)obj.ActualWidth, (int)obj.ActualHeight, 96, 96, PixelFormats.Pbgra32);
+            bmp.Render(obj);
+            return bmp;
+        }
     }
 }

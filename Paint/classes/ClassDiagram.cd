@@ -3,63 +3,63 @@
   <Class Name="Paint.classes.Shape">
     <Position X="9.75" Y="1.75" Width="2.25" />
     <TypeIdentifier>
-      <HashCode>AAAEAADIBIAEwgAAAAAAAEAAAAIAAICAAEAAgABAAAA=</HashCode>
+      <HashCode>AIAEAADIBIAEwgAAAACABEQAAAIAAoCAAEAAgAhAAAA=</HashCode>
       <FileName>classes\Shape.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Paint.classes.Rectangle">
-    <Position X="3.75" Y="7.5" Width="2.25" />
+    <Position X="3.75" Y="8.75" Width="2.25" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAEAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>classes\Rectangle.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Paint.classes.Ellipse">
-    <Position X="2.75" Y="9.75" Width="1.5" />
+    <Position X="2.75" Y="11" Width="2" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>classes\Ellipse.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Paint.classes.Square">
-    <Position X="5.25" Y="9.75" Width="1.75" />
+    <Position X="5.25" Y="11" Width="2.25" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAABAAAAAAAAAAACEAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAQAAAAAAACAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>classes\Square.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />
   </Class>
   <Class Name="Paint.classes.Circle">
-    <Position X="2.75" Y="12" Width="1.75" />
+    <Position X="2.75" Y="13.25" Width="2" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAABAAAAAAAAAAACEAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAQAAAAAAACAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>classes\Circle.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />
   </Class>
   <Class Name="Paint.classes.Polygon">
-    <Position X="12.25" Y="7.5" Width="2.25" />
+    <Position X="12.25" Y="8.75" Width="2.25" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAABAAEAAAAAAAAAEAAAAIAAAAAAAAAAAIAAAA=</HashCode>
+      <HashCode>AAAAAAAABAAEAAQAQAAAAEAAAAIAAAAAAAAAAAIAAAA=</HashCode>
       <FileName>classes\Polygon.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Paint.classes.IsoscelesTriangle">
-    <Position X="7.75" Y="10.5" Width="2.25" />
+    <Position X="7.75" Y="12.5" Width="2.75" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAA=</HashCode>
       <FileName>classes\IsoscelesTriangle.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Paint.classes.RightTriangle">
-    <Position X="10.75" Y="10.5" Width="2.25" />
+    <Position X="10.75" Y="12.5" Width="2.25" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAA=</HashCode>
       <FileName>classes\RightTriangle.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Paint.classes.Pentagon">
-    <Position X="13.75" Y="10.5" Width="2.25" />
+    <Position X="13.75" Y="12.5" Width="2.25" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAA=</HashCode>
       <FileName>classes\Pentagon.cs</FileName>
@@ -67,7 +67,7 @@
     </TypeIdentifier>
   </Class>
   <Class Name="Paint.classes.Star">
-    <Position X="16.75" Y="10.5" Width="2.25" />
+    <Position X="16.75" Y="12.5" Width="2.25" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAA=</HashCode>
       <FileName>classes\Star.cs</FileName>
