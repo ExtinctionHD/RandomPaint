@@ -28,3 +28,4 @@ D:\Education\БГУИР ООТПиСП\Git\RandomPaint\Paint\obj\Debug\Paint.csp
 D:\Education\БГУИР ООТПиСП\Git\RandomPaint\Paint\obj\Debug\Paint.exe
 D:\Education\БГУИР ООТПиСП\Git\RandomPaint\Paint\obj\Debug\Paint.pdb
 D:\Education\БГУИР ООТПиСП\Git\RandomPaint\Paint\obj\Debug\Paint.csprojResolveAssemblyReference.cache
+D:\Education\БГУИР ООТПиСП\Git\RandomPaint\Paint\obj\Debug\App.baml

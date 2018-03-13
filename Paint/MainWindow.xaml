@@ -18,10 +18,12 @@
             <RowDefinition Height="Auto"/>
             <RowDefinition/>
         </Grid.RowDefinitions>
-        
+
         <Grid x:Name="grShapeButtons" 
               Height="auto"
-              HorizontalAlignment="Left">
+              HorizontalAlignment="Left"
+              Margin="50, 10">
+
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="Auto"/>
                 <ColumnDefinition Width="Auto"/>
@@ -35,45 +37,38 @@
             <RadioButton x:Name="rectangle"
                          Grid.Column="0"
                          Content="Rectangle"
-                         Margin="10"
                          IsChecked="True"
                          Checked="rectangle_Checked"/>
             <RadioButton x:Name="ellipse"
                          Grid.Column="1" 
                          Content="Ellipse"
-                         Margin="10" 
                          Checked="ellipse_Checked"/>
             <RadioButton x:Name="triangleR"
                          Grid.Column="2" 
                          Content="Right Triangle"
-                         Margin="10" 
                          Checked="triangleR_Checked"/>
             <RadioButton x:Name="triangleI"
                          Grid.Column="3" 
                          Content="Isosceles Triangle"
-                         Margin="10" 
                          Checked="triangleI_Checked"/>
             <RadioButton x:Name="pentagon"
                          Grid.Column="4" 
                          Content="Pentagon"
-                         Margin="10" 
                          Checked="pentagon_Checked"/>
             <RadioButton x:Name="star"
                          Grid.Column="5" 
                          Content="Star"
-                         Margin="10" 
                          Checked="star_Checked"/>
             <RadioButton x:Name="randomShape"
                          Grid.Column="6" 
                          Content="Random"
-                         Margin="10" 
                          Checked="randomShape_Checked"/>
         </Grid>
 
-
         <Grid x:Name="grSystemButtons" 
               Height="auto"
-              HorizontalAlignment="Right">
+              HorizontalAlignment="Right"
+              Margin="50, 10">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="Auto"/>
                 <ColumnDefinition Width="Auto"/>
@@ -82,16 +77,12 @@
             <Button x:Name="btnNewColors"
                     Content="New Colors"
                     VerticalAlignment="Center"
-                    Margin="10"
-                    Padding="10, 3"
                     Click="btnNewColors_Click"/>
 
             <Button x:Name="btnSave"
                     Grid.Column="1"
                     Content="Save Picture"
                     VerticalAlignment="Center"
-                    Margin="10"
-                    Padding="10, 3"
                     Click="btnSave_Click"/>
 
         </Grid>
@@ -107,7 +98,7 @@
                 MouseRightButtonUp="canvas_MouseButtonUp"
                 MouseWheel="canvas_MouseWheel"
                 ClipToBounds="True">
-
+            
         </Canvas>
     </Grid>
 </Window>

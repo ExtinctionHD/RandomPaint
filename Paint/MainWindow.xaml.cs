@@ -39,14 +39,14 @@ namespace Paint
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
             canvas.Background = new SolidColorBrush(GetRandomColor());
+            Background = new SolidColorBrush(GetRandomColor());
         }
 
         private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
         {
-            SaveDilog();
+            //SaveDilog();
         }
-
-
+        
         private void Window_KeyDown(object sender, KeyEventArgs e)
         {
             // Рисование равносторонних фигур
