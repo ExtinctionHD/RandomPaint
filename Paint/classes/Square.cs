@@ -26,7 +26,6 @@ namespace Paint.classes
             set
             {
                 base.Vertex2 = SetEqualSides(value);
-                SetSides();
             }
         }
 
@@ -130,11 +129,11 @@ namespace Paint.classes
             return v2;
         }
         
-        public Square(Color color, Point topLeft, Point bottomRight) : base(color, topLeft, bottomRight)
+        public Square(Color color, Point topLeft, Point bottomRight): base(color, topLeft, bottomRight)
         {
         }
         
-        public Square(Shape shape) : base(shape)
+        public Square(Shape shape): base(shape)
         {
         }
     }

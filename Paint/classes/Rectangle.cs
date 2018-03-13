@@ -17,11 +17,11 @@ namespace Paint.classes
 {
     class Rectangle : Shape
     {       
-        public Rectangle(Color color, Point vertex1, Point vertex2) : base(color, vertex1, vertex2)
+        public Rectangle(Color color, Point vertex1, Point vertex2): base(color, vertex1, vertex2)
         {
         }
 
-        public Rectangle(Shape shape) : base(shape.Color, shape.Vertex1, shape.Vertex2)
+        public Rectangle(Shape shape): base(shape.Color, shape.Vertex1, shape.Vertex2)
         {
             reverseX = shape.reverseX;
             reverseY = shape.reverseY;

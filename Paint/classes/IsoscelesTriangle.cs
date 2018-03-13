@@ -18,7 +18,11 @@ namespace Paint.classes
 {
     class IsoscelesTriangle : Polygon
     {
-        public IsoscelesTriangle(Color color, Point vertex1, Point vertex2) : base(color, vertex1, vertex2)
+        public IsoscelesTriangle(Color color, Point vertex1, Point vertex2): base(color, vertex1, vertex2)
+        {
+        }
+
+        public IsoscelesTriangle(Shape shape): base(shape)
         {
         }
 

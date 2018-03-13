@@ -22,22 +22,33 @@ namespace Paint.classes
         {
             get
             {
-                return drawBase.ActualWidth;
+                return width;
+            }
+            set
+            {
+                width = value;
             }
         }
+        private double width;
+
         public override double Height
         {
             get
             {
-                return drawBase.ActualHeight;
+                return height;
+            }
+            set
+            {
+                height = value;
             }
         }
+        private double height;
 
-        public Polygon(Color color, Point vertex1, Point vertex2) : base(color, vertex1, vertex2)
+        public Polygon(Color color, Point vertex1, Point vertex2): base(color, vertex1, vertex2)
         {
         }
 
-        public Polygon(Shape shape) : base(shape.Color, shape.Vertex1, shape.Vertex2)
+        public Polygon(Shape shape): base(shape.Color, shape.Vertex1, shape.Vertex2)
         {
             reverseX = shape.reverseX;
             reverseY = shape.reverseY;
@@ -50,10 +61,10 @@ namespace Paint.classes
 
         protected override void SetSides()
         {
-            if (Vertex2.X - Vertex1.X >= 0 && Vertex2.Y - Vertex1.Y >= 0)
-            {
-                ((System.Windows.Shapes.Polygon)drawBase).Points = new PointCollection(GeneratePolygon());
-            }
+            Width = Vertex2.X - Vertex1.X;
+            Height = Vertex2.Y - Vertex1.Y;
+
+            ((System.Windows.Shapes.Polygon)drawBase).Points = new PointCollection(GeneratePolygon());
         }
 
         protected abstract Point[] GeneratePolygon();

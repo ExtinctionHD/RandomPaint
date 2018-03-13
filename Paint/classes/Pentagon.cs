@@ -21,18 +21,19 @@ namespace Paint.classes
         {
         }
 
+        public Pentagon(Shape shape): base(shape)
+        {
+        }
+
         protected override Point[] GeneratePolygon()
         {
-            double width = Vertex2.X - Vertex1.X;
-            double height = Vertex2.Y - Vertex1.Y;
-
             Point[] pentagon = new Point[]
             {
-                new Point(width / 2, 0),
-                new Point(width, 0.365 * height),
-                new Point(0.8125 * width, height),
-                new Point(0.1875 * width, height),
-                new Point(0, 0.365 * height),
+                new Point(Width / 2, 0),
+                new Point(Width, 0.365 * Height),
+                new Point(0.8125 * Width, Height),
+                new Point(0.1875 * Width, Height),
+                new Point(0, 0.365 * Height),
             };
             return pentagon;
         }

@@ -17,11 +17,11 @@ namespace Paint.classes
 {
     class Ellipse : Rectangle
     {
-        public Ellipse(Color color, Point vertex1, Point vertex2) : base(color, vertex1, vertex2)
+        public Ellipse(Color color, Point vertex1, Point vertex2): base(color, vertex1, vertex2)
         {
         }
 
-        public Ellipse(Shape shape) : base(shape)
+        public Ellipse(Shape shape): base(shape)
         {
         }
 

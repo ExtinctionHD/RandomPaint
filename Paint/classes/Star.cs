@@ -17,27 +17,28 @@ namespace Paint.classes
 {
     class Star : Polygon
     {
-        public Star(Color color, Point vertex1, Point vertex2) : base(color, vertex1, vertex2)
+        public Star(Color color, Point vertex1, Point vertex2): base(color, vertex1, vertex2)
+        {
+        }
+
+        public Star(Shape shape): base(shape)
         {
         }
 
         protected override Point[] GeneratePolygon()
         {
-            double width = Vertex2.X - Vertex1.X;
-            double height = Vertex2.Y - Vertex1.Y;
-
             Point[] star = new Point[]
             {
-                new Point(width / 2, 0),
-                new Point(0.6 * width, 0.365 * height),
-                new Point(width, 0.365 * height),
-                new Point(0.6875 * width, 0.6 * height),
-                new Point(0.8125 * width, height),
-                new Point(width / 2, 0.757 * height),
-                new Point(0.1875 * width, height),
-                new Point(0.3125 * width, 0.6 * height),
-                new Point(0, 0.365 * height),
-                new Point(0.3875 * width, 0.365 * height),
+                new Point(Width / 2, 0),
+                new Point(0.6 * Width, 0.365 * Height),
+                new Point(Width, 0.365 * Height),
+                new Point(0.6875 * Width, 0.6 * Height),
+                new Point(0.8125 * Width, Height),
+                new Point(Width / 2, 0.757 * Height),
+                new Point(0.1875 * Width, Height),
+                new Point(0.3125 * Width, 0.6 * Height),
+                new Point(0, 0.365 * Height),
+                new Point(0.3875 * Width, 0.365 * Height),
             };
             return star;
         }

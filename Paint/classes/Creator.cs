@@ -20,7 +20,7 @@ namespace Paint.classes
         public abstract Shape FactoryMethod(Color color, Point v1, Point v2);
     }
 
-    class RectangleCreator : Creator
+    class RectangleCreator: Creator
     {
         public override Shape FactoryMethod(Color color, Point v1, Point v2)
         {
@@ -28,7 +28,7 @@ namespace Paint.classes
         }
     }
 
-    class SquareCreator : Creator
+    class SquareCreator: Creator
     {
         public override Shape FactoryMethod(Color color, Point v1, Point v2)
         {
@@ -36,7 +36,7 @@ namespace Paint.classes
         }
     }
 
-    class EllipseCreator : Creator
+    class EllipseCreator: Creator
     {
         public override Shape FactoryMethod(Color color, Point v1, Point v2)
         {
@@ -52,7 +52,7 @@ namespace Paint.classes
         }
     }
 
-    class IsoscelesTriangleCreator : Creator
+    class IsoscelesTriangleCreator: Creator
     {
         public override Shape FactoryMethod(Color color, Point v1, Point v2)
         {
@@ -60,7 +60,7 @@ namespace Paint.classes
         }
     }
 
-    class RightTriangleCreator : Creator
+    class RightTriangleCreator: Creator
     {
         public override Shape FactoryMethod(Color color, Point v1, Point v2)
         {
@@ -68,7 +68,7 @@ namespace Paint.classes
         }
     }
 
-    class PentagonCreator : Creator
+    class PentagonCreator: Creator
     {
         public override Shape FactoryMethod(Color color, Point v1, Point v2)
         {
@@ -76,7 +76,7 @@ namespace Paint.classes
         }
     }
 
-    class StarCreator : Creator
+    class StarCreator: Creator
     {
         public override Shape FactoryMethod(Color color, Point v1, Point v2)
         {
@@ -84,7 +84,7 @@ namespace Paint.classes
         }
     }
 
-    class RandomCreator : Creator
+    class RandomCreator: Creator
     {
         public override Shape FactoryMethod(Color color, Point v1, Point v2)
         {

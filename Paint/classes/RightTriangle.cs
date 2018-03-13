@@ -18,7 +18,7 @@ namespace Paint.classes
 {
     class RightTriangle : Polygon
     {
-        public RightTriangle(Color color, Point vertex1, Point vertex2) : base(color, vertex1, vertex2)
+        public RightTriangle(Color color, Point vertex1, Point vertex2): base(color, vertex1, vertex2)
         {
         }
 

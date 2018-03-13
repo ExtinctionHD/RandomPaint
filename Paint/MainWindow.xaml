@@ -69,11 +69,13 @@
                          Checked="randomShape_Checked"/>
         </Grid>
 
-        <Button Content="New Colors"
+        <Button x:Name="btnNewColors"
+                Content="New Colors"
                 HorizontalAlignment="Right"
                 VerticalAlignment="Center"
                 Margin="20, 0"
-                Padding="10, 3"/>
+                Padding="10, 3"
+                Click="btnNewColors_Click"/>
 
         <Canvas x:Name="canvas"
                 Grid.Row="1"

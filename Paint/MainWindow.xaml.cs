@@ -46,14 +46,14 @@ namespace Paint
             {
                 if (curShape.GetType() == typeof(Rectangle))
                 {
-                    canvas.Children.Remove(curShape.drawBase);
+                    curShape.Remove(canvas, shapesHistory);
 
                     curShape = new Square(curShape);
                     curShape.Draw(canvas, shapesHistory);
                 }
                 if (curShape.GetType() == typeof(Ellipse))
                 {
-                    canvas.Children.Remove(curShape.drawBase);
+                    curShape.Remove(canvas, shapesHistory);
 
                     curShape = new Circle(curShape);
                     curShape.Draw(canvas, shapesHistory);
@@ -63,8 +63,7 @@ namespace Paint
             // Удаление последней фигуры
             if (e.Key == Key.Z && Keyboard.IsKeyDown(Key.LeftCtrl) && canvas.Children.Count != 0)
             {
-                canvas.Children.Remove(canvas.Children[canvas.Children.Count - 1]);
-                shapesHistory.Remove(shapesHistory.Last());
+                shapesHistory.Last().Remove(canvas, shapesHistory);
 
                 if (shapesHistory.Count != 0)
                     curShape = shapesHistory.Last();
@@ -79,14 +78,14 @@ namespace Paint
             {
                 if ((bool)rectangle.IsChecked)
                 {
-                    canvas.Children.Remove(curShape.drawBase);
+                    curShape.Remove(canvas, shapesHistory);
 
                     curShape = new Rectangle(curShape);
                     curShape.Draw(canvas, shapesHistory);
                 }
                 if ((bool)ellipse.IsChecked)
                 {
-                    canvas.Children.Remove(curShape.drawBase);
+                    curShape.Remove(canvas, shapesHistory);
 
                     curShape = new Ellipse(curShape);
                     curShape.Draw(canvas, shapesHistory);
@@ -122,7 +121,9 @@ namespace Paint
             if (e.RightButton == MouseButtonState.Pressed && curShape != null)
             {
                 Point delta = new Point(e.GetPosition(canvas).X - RightButtonDownPos.X, e.GetPosition(canvas).Y - RightButtonDownPos.Y);
-                curShape.Move(canvas, delta);
+
+                curShape.Move(delta);
+
                 RightButtonDownPos = e.GetPosition(canvas);
             }
         }
@@ -143,6 +144,16 @@ namespace Paint
             byte[] rgb = new byte[3];
             random.NextBytes(rgb);
             return Color.FromRgb(rgb[0], rgb[1], rgb[2]);
+        }
+        
+        private void btnNewColors_Click(object sender, RoutedEventArgs e)
+        {
+            canvas.Background = new SolidColorBrush(GetRandomColor());
+
+            foreach (Shape shape in shapesHistory)
+            {
+                shape.Color = GetRandomColor();
+            }
         }
 
         // Выбор фигуры
@@ -174,5 +185,6 @@ namespace Paint
         {
             curCreator = new RandomCreator();
         }
+
     }
 }

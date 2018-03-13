@@ -26,7 +26,6 @@ namespace Paint.classes
             set
             {
                 base.Vertex2 = SetEqualSides(value);
-                SetSides();
             }
         }
 
@@ -130,11 +129,11 @@ namespace Paint.classes
             return v2;
         }
 
-        public Circle(Color color, Point vertex1, Point vertex2) : base(color, vertex1, vertex2)
+        public Circle(Color color, Point vertex1, Point vertex2): base(color, vertex1, vertex2)
         {
         }
 
-        public Circle(Shape shape) : base(shape)
+        public Circle(Shape shape): base(shape)
         {
         }
     }
