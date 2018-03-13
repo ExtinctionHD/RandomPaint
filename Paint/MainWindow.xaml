@@ -32,6 +32,7 @@
                 <ColumnDefinition Width="Auto"/>
                 <ColumnDefinition Width="Auto"/>
                 <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="Auto"/>
             </Grid.ColumnDefinitions>
 
             <RadioButton x:Name="rectangle"
@@ -55,12 +56,16 @@
                          Grid.Column="4" 
                          Content="Pentagon"
                          Checked="pentagon_Checked"/>
-            <RadioButton x:Name="star"
+            <RadioButton x:Name="hexagon"
                          Grid.Column="5" 
+                         Content="Hexagon"
+                         Checked="hexagon_Checked"/>
+            <RadioButton x:Name="star"
+                         Grid.Column="6" 
                          Content="Star"
                          Checked="star_Checked"/>
             <RadioButton x:Name="randomShape"
-                         Grid.Column="6" 
+                         Grid.Column="7" 
                          Content="Random"
                          Checked="randomShape_Checked"/>
         </Grid>

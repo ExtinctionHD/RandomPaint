@@ -57,6 +57,7 @@
     <Compile Include="classes\Circle.cs" />
     <Compile Include="classes\Ellipse.cs" />
     <Compile Include="classes\Creator.cs" />
+    <Compile Include="classes\Hexagon.cs" />
     <Compile Include="classes\IEquilateral.cs" />
     <Compile Include="classes\IsoscelesTriangle.cs" />
     <Compile Include="classes\Pentagon.cs" />

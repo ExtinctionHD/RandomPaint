@@ -76,6 +76,14 @@ namespace Paint.classes
         }
     }
 
+    class HexagonCreator : Creator
+    {
+        public override Shape FactoryMethod(Color color, Point v1, Point v2)
+        {
+            return new Hexagon(color, v1, v2);
+        }
+    }
+
     class StarCreator: Creator
     {
         public override Shape FactoryMethod(Color color, Point v1, Point v2)
@@ -115,6 +123,9 @@ namespace Paint.classes
 
                 case 6:
                     return new Pentagon(color, v1, v2);
+
+                case 7:
+                    return new Hexagon(color, v1, v2);
 
                 default:
                     return new Star(color, v1, v2);

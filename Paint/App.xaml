@@ -51,7 +51,6 @@
             </Setter>
         </Style>
 
-
         <Style TargetType="Button">
             <Setter Property="Margin" Value="-1, 0, 0, 0"/>
             <Setter Property="Cursor" Value="Hand"/>

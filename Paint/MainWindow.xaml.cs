@@ -52,14 +52,14 @@ namespace Paint
             // Рисование равносторонних фигур
             if (e.Key == Key.LeftShift && Mouse.LeftButton == MouseButtonState.Pressed)
             {
-                if (curShape.GetType() == typeof(Rectangle))
+                if ((bool)rectangle.IsChecked)
                 {
                     curShape.Remove(canvas, shapesHistory);
 
                     curShape = new Square(curShape);
                     curShape.Draw(canvas, shapesHistory);
                 }
-                if (curShape.GetType() == typeof(Ellipse))
+                if ((bool)ellipse.IsChecked)
                 {
                     curShape.Remove(canvas, shapesHistory);
 
@@ -146,22 +146,35 @@ namespace Paint
             double ROTATE_SPEED = e.Delta / 20;
             curShape.Angle += ROTATE_SPEED;
         }
+        
+        // Изменение цвета фигур
+        private void btnNewColors_Click(object sender, RoutedEventArgs e)
+        {
+            if (Keyboard.IsKeyDown(Key.L))
+            {
+                shapesHistory.Last().Color = GetRandomColor();
+            }
+
+            if (Keyboard.IsKeyDown(Key.B))
+            {
+                canvas.Background = new SolidColorBrush(GetRandomColor());
+            }
+
+            if (!Keyboard.IsKeyDown(Key.B) && !Keyboard.IsKeyDown(Key.L))
+            {
+                canvas.Background = new SolidColorBrush(GetRandomColor());
+                foreach (Shape shape in shapesHistory)
+                {
+                    shape.Color = GetRandomColor();
+                }
+            }
+        }
 
         private Color GetRandomColor()
         {
             byte[] rgb = new byte[3];
             random.NextBytes(rgb);
             return Color.FromRgb(rgb[0], rgb[1], rgb[2]);
-        }
-        
-        private void btnNewColors_Click(object sender, RoutedEventArgs e)
-        {
-            canvas.Background = new SolidColorBrush(GetRandomColor());
-
-            foreach (Shape shape in shapesHistory)
-            {
-                shape.Color = GetRandomColor();
-            }
         }
 
         // Выбор фигуры
@@ -185,6 +198,10 @@ namespace Paint
         {
             curCreator = new PentagonCreator();
         }
+        private void hexagon_Checked(object sender, RoutedEventArgs e)
+        {
+            curCreator = new HexagonCreator();
+        }
         private void star_Checked(object sender, RoutedEventArgs e)
         {
             curCreator = new StarCreator();
@@ -194,6 +211,7 @@ namespace Paint
             curCreator = new RandomCreator();
         }
 
+        // Сохранение рисонка в png формате
         private void btnSave_Click(object sender, RoutedEventArgs e)
         {
             SaveDilog();
